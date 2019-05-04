@@ -1,10 +1,10 @@
 {
-    "name": "overtrue\/weather",
+    "name": "overtest\/weather",
     "description": "A weather SDK",
     "license": "MIT",
     "authors": [
         {
-            "name": "overtrue",
+            "name": "overtest",
             "email": "springlight@126.com"
         }
     ],
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Overtrue\\Weather\\": "./src/"
+            "overtest\\Weather\\": "./src/"
         }
     },
 

@@ -1,8 +1,8 @@
 <?php
 $header = <<<EOF
-This file is part of the overtrue/weather.
+This file is part of the overtest/weather.
 
-(c) overtrue <springlight@126.com>
+(c) overtest <springlight@126.com>
 
 This source file is subject to the MIT license that is bundled.
 EOF;

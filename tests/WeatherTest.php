@@ -1,14 +1,14 @@
 <?php
 
-namespace Overtrue\Weather\Tests;
+namespace overtest\Weather\Tests;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Response;
 use Mockery\Matcher\AnyArgs;
-use Overtrue\Weather\Exceptions\HttpException;
-use Overtrue\Weather\Exceptions\InvalidArgumentException;
-use Overtrue\Weather\Weather;
+use overtest\Weather\Exceptions\HttpException;
+use overtest\Weather\Exceptions\InvalidArgumentException;
+use overtest\Weather\Weather;
 use PHPUnit\Framework\TestCase;
 
 

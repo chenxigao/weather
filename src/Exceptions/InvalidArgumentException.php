@@ -1,5 +1,5 @@
 <?php
-namespace Overtrue\Weather\Exceptions;
+namespace overtest\Weather\Exceptions;
 
 class InvalidArgumentException extends \Exception
 {
