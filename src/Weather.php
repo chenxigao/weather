@@ -12,7 +12,7 @@ class Weather
 
     public function __construct(string $key)
     {
-        
+
         $this->key = $key;
     }
 
