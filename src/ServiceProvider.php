@@ -13,6 +13,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         });
 
         $this->app->alias(Weather::class, 'weather');
+
     }
 
     public function provides()

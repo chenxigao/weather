@@ -20,7 +20,8 @@
     },
 
 
-        "laravel": {
+
+    "laravel": {
             "providers": [
                 "Overture\\Weather\\ServiceProvider"
             ]

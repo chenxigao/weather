@@ -16,6 +16,7 @@ class WeatherTest extends TestCase
 {
     public function testGetWeather()
     {
+
         //json, 创建模拟接口响应值。
         $response = new Response(200, [], '{"success": true}');
 
