@@ -204,6 +204,61 @@ WEATHER_API_KEY=xxxxxxxxxxxxxxxxxxxxx
     .
     .
 ```
+
+## 代码重构
+
+#### 重新设计参数
+就 $type 参数而言，base 代表实时，all 代表预报本来就不是特别合理的设计，不直接对用户暴露接口参数，重新设计合理方便阅读的参数对外使用，将设计的参数与接口参数作对应，比如，我们可以改成下面这样子：
+src/Weather.php
+```
+ .
+    public function getWeather($city, $type = 'live', $format = 'json')
+    {
+        $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
+
+        $types = [
+            'live' => 'base',
+            'forecast' => 'all',
+        ];
+
+        if (!\in_array(\strtolower($format), ['xml', 'json'])) {
+            throw new InvalidArgumentException('Invalid response format: '.$format);
+        }
+
+        if (!\array_key_exists(\strtolower($type), $types)) {
+            throw new InvalidArgumentException('Invalid type value(live/forecast): '.$type);
+        }
+        .
+        .
+        .
+    }
+```
+
+#### 添加语义化的方法
+
+添加专用的语义化方法 来优化我们的代码，比如我们添加下面两个方法：
+
+* `getLiveWeather` - 获取实时天气
+* `getForecastsWeather` - 获取天气预报
+
+src/Weather.php
+```angular2html
+    .
+    .
+    public function getLiveWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'base', $format);
+    }
+
+    public function getForecastsWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'all', $format);
+    }
+    .
+    .
+```
+
+
 ## 参考
 
 * <a href="https://lbs.amap.com/api/webservice/guide/api/weatherinfo/">高德开放平台天气接口</a>
